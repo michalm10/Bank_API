@@ -69,7 +69,3 @@ namespace nbp_api.Controllers
         }
     }
 }
-/*
- * docker run -it --rm -p 5000:5000 -p 5001:5001 -e ASPNETCORE_HTTP_PORT=https://+:5001 -e ASPNETCORE_URLS=http://+:5000 nbp_api:latest
- * docker build --rm -t nbp_api:latest .
- */

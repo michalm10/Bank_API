@@ -32,5 +32,3 @@
         public double mid { get; set; }
     }
 }
-
-//{ "table":"C","currency":"frank szwajcarski","code":"CHF","rates":[{ "no":"076/C/NBP/2023","effectiveDate":"2023-04-19","bid":4.6525,"ask":4.7465},{ "no":"077/C/NBP/2023","effectiveDate":"2023-04-20","bid":4.6442,"ask":4.7380},{ "no":"078/C/NBP/2023","effectiveDate":"2023-04-21","bid":4.6520,"ask":4.7460},{ "no":"079/C/NBP/2023","effectiveDate":"2023-04-24","bid":4.6558,"ask":4.7498}]}

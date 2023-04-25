@@ -24,7 +24,6 @@ namespace nbp_api.Services
         {
             var dateFormatted = date.ToString("yyyy-MM-dd");
             var response = await _client.GetAsync($"{_apiConfig.URL}a/{code}/{dateFormatted}{formatJson}");
-            Console.WriteLine($"{_apiConfig.URL}a/{code}/{dateFormatted}{formatJson}");
             try
             {
                 response.EnsureSuccessStatusCode();
@@ -32,7 +31,6 @@ namespace nbp_api.Services
                 var responseBody = await response.Content.ReadFromJsonAsync<ExchangesAModel>();
                 if (responseBody is null) throw new NullReferenceException(nameof(responseBody));
 
-                Console.WriteLine(responseBody);
                 double rate = responseBody.rates[0].mid;
                 return rate.ToString();
             }
@@ -45,13 +43,11 @@ namespace nbp_api.Services
         public async Task<MinMaxModel?> getMinMax(string code, int quotations)
         {
             var response = await _client.GetAsync($"{_apiConfig.URL}a/{code}/last/{quotations}{formatJson}");
-            Console.WriteLine($"{_apiConfig.URL}a/{code}/last/{quotations}{formatJson}");
             try
             {
                 response.EnsureSuccessStatusCode();
 
                 var responseBody = await response.Content.ReadFromJsonAsync<ExchangesAModel>();
-                Console.WriteLine(responseBody);
                 if (responseBody is null) throw new NullReferenceException(nameof(responseBody));
 
                 var min = responseBody.rates.MinBy(item => item.mid);
@@ -67,13 +63,11 @@ namespace nbp_api.Services
         public async Task<ValueModel?> getDiff(string code, int quotations)
         {
             var response = await _client.GetAsync($"{_apiConfig.URL}c/{code}/last/{quotations}{formatJson}");
-            Console.WriteLine($"{_apiConfig.URL}c/{code}/last/{quotations}{formatJson}");
             try
             {
                 response.EnsureSuccessStatusCode();
 
                 var responseBody = await response.Content.ReadFromJsonAsync<ExchangesCModel>();
-                Console.WriteLine(responseBody);
                 if (responseBody is null) throw new NullReferenceException(nameof(responseBody));
 
                 var diff = responseBody.rates.MaxBy(item => Math.Abs(item.bid - item.ask));
