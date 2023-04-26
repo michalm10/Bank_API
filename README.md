@@ -5,6 +5,13 @@ Written in .NET
 ## Running  
 Clone repository and navigate to the main folder.
 
+### With .NET installed
+This requires .NET SDK 6.0
+
+```
+dotnet run --project nbp_api/nbp_api.csproj
+```
+
 ### Docker
 To build type command:
 ```
@@ -14,12 +21,6 @@ docker build --rm -t nbp_api:latest .
 To run type command:
 ```
 docker run -it --rm -p 5000:5000 -p 5001:5001 -e ASPNETCORE_HTTP_PORT=https://+:5001 -e ASPNETCORE_URLS=http://+:5000 nbp_api:latest
-```
-### Alternatively
-This requires .NET SDK 6.0
-
-```
-dotnet run --project nbp_api/nbp_api.csproj
 ```
 
 Now server should be running on `localhost:5000`
