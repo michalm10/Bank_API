@@ -15,7 +15,7 @@ dotnet run --project nbp_api/nbp_api.csproj
 ### Docker
 To build type command:
 ```
-docker build --rm -t nbp_api:latest .
+docker build -t nbp_api:latest .
 ```
 
 To run type command:
