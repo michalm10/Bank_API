@@ -16,7 +16,7 @@ To run type command:
 docker run -it --rm -p 5000:5000 -p 5001:5001 -e ASPNETCORE_HTTP_PORT=https://+:5001 -e ASPNETCORE_URLS=http://+:5000 nbp_api:latest
 ```
 ### Alternatively
-This requires .NET SDK 6.0 and ASP.NET 6.0.
+This requires .NET SDK 6.0
 
 ```
 dotnet run --project nbp_api/nbp_api.csproj
